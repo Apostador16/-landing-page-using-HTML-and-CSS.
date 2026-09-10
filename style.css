@@ -27,10 +27,9 @@ body {
     line-height: 1.6;
 }
 
-
-.navbar {
-    display: flex; 
-    justify-content: space-between; 
+.navbar{
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 1.5rem 5%;
     background-color: var(--bg-light);
@@ -62,7 +61,6 @@ body {
     color: var(--primary);
 }
 
-
 .btn-login, .btn-primary {
     background-color: var(--primary);
     color: var(--white);
@@ -78,6 +76,7 @@ body {
 .btn-login:hover, .btn-primary:hover {
     background-color: var(--secondary);
 }
+
 
 .hero {
     display: flex;
@@ -126,9 +125,7 @@ body {
     object-fit: cover;
 }
 
-/* =========================================
-   4. SECCIÓN DE SERVICIOS
-   ========================================= */
+
 .services {
     padding: 2rem 5% 4rem 5%;
     text-align: center;
@@ -141,11 +138,33 @@ body {
     margin-bottom: 3rem;
 }
 
+
+.carousel-wrapper {
+    width: 100%;
+    overflow: hidden; 
+    padding: 1rem 0;
+}
+
+/* La pista infinita */
 .services-grid {
-    display: grid;
- 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
     gap: 1.5rem;
+    width: max-content;
+    animation: scroll 15s linear infinite;
+}
+
+
+.services-grid:hover {
+    animation-play-state: paused; 
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50% - 0.75rem));
+    }
 }
 
 .card {
@@ -154,10 +173,13 @@ body {
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     transition: transform 0.3s ease;
+
+    width: 250px;
+    flex-shrink: 0;
 }
 
 .card:hover {
-    transform: translateY(-5px); 
+    transform: translateY(-5px);
 }
 
 .card img {
