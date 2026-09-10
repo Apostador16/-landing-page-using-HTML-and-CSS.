@@ -145,17 +145,16 @@ body {
     padding: 1rem 0;
 }
 
-/* La pista infinita */
 .services-grid {
     display: flex;
     gap: 1.5rem;
     width: max-content;
-    animation: scroll 15s linear infinite;
+    will-change: transform; 
+    animation: scroll 25s linear infinite;
 }
 
-
 .services-grid:hover {
-    animation-play-state: paused; 
+    animation-play-state: paused;
 }
 
 @keyframes scroll {
@@ -163,7 +162,8 @@ body {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-50% - 0.75rem));
+     
+        transform: translateX(calc(-100% / 3));
     }
 }
 
